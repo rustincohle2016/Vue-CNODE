@@ -39,9 +39,19 @@
           </span>
         </span>
             <!--标题区域-->
-            <span>
+            <!--点击标题进入页面应使用router-link绑定地址,写article组件后加入-->
+            <router-link :to="{
+            name:'post_content',
+            params: {
+            id: post.id
+            }
+            }">
+              <!--点击标题,将帖子的ID传输给article组件.-->
+              <span>
               {{post.title}}
             </span>
+            </router-link>
+
             <!--回复时间-->
             <span class="last_reply">
               {{post.last_reply_at | formatDate }}
