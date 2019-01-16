@@ -94,7 +94,13 @@
           this.isLoading = true
           this.getArticleData()
         // 注意引用函数也要使用this指向
+      },
+      watch:{
+        '$route'(to,from){
+          this.getArticleData()
+        }
       }
+      //watch观测同一路由下,路由状态是否变化,由于article组件和sidebar组件处在同一路由内,如果点击sidebar组件链接,给路由传递了参数,没有发生跳转.这时需要使用watch来观测sidebar的状态.
 
 
     }
