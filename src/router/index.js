@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Article from "../components/Article";
 import Postlist from "../components/Postlist";
-import Userinfo from "../components/Userinfo"
+import Userinfo from "../components/Userinfo";
+import sidebar from '../components/sidebar'
+
 
 
 Vue.use(Router)
@@ -20,13 +22,14 @@ export default new Router({
     },
 
     {
-      path: '/topic/:id',
+      path: '/topic/:id&author=:name',
       name: 'post_content',
       // 此对象是article组件的路由
       components:{
         main:Article,
         // 当进入article页面时,显示article组件
         // 组件定义名称
+        slidebar:sidebar
       }
       // 以上组件接收postlist组件收到的ID
     },
