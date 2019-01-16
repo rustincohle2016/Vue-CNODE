@@ -19,16 +19,20 @@
 
       </div>
       <div v-html="post.content" class="topic_content"></div>
-      <div class="reply">
+      <div id="reply">
         <div class="topbar">回复</div>
         <div v-for="(reply,index) in post.replies" class="replySec">
+          <!--将传输到本地的回复数据渲染到页面上-->
           <router-link :to="{
-          name:user_info,
+          name:'user_info',
           params:{
           name:reply.author.loginname
+          },
+          // 此处点击则进入用户信息界面
           }
 ">
             <img :src="reply.author.avatar_url" alt="">
+            <!--头像-->
           </router-link>
             <router-link :to="{
             name:'user_info',
@@ -36,12 +40,15 @@
             params:{
             name:reply.author.loginname
             }
+                    // 此处点击则进入用户信息界面
 
             }">
 
           <span>{{reply.author.loginname}}</span>
             </router-link>
+          <!--用户名-->
           <span>{{index+1}}楼</span>
+          <!--发言次序-->
           <p v-html="reply.content"></p>
         </div>
       </div>
@@ -71,6 +78,7 @@
               // `https://cnodejs.org/api/v1/topic/${this.$route.params.id}`
               .then(res=>{
                 if(res.data.success == true){
+                  //success状态为true时,表明获取数据成功
                   this.isLoading =false;
                   this.post = res.data.data;
                 }
