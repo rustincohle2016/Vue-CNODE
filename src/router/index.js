@@ -16,23 +16,29 @@ export default new Router({
         // 注意这里使用components!!!!
         main: Postlist
       }
+      // 当显示首页时,显示postlist组件
     },
 
     {
       path: '/topic/:id',
       name: 'post_content',
+      // 此对象是article组件的路由
       components:{
         main:Article,
+        // 当进入article页面时,显示article组件
         // 组件定义名称
       }
+      // 以上组件接收postlist组件收到的ID
     },
-    // 此对象是postlist的路由
+
     {
       name:'user_info',
-      path:'/userinfo/name',
+      // 此对象为用户信息的路由
+      path:'/userinfo/:name',
       components:{
         main:Userinfo,
       }
-    }
+    },
+
   ]
 })
