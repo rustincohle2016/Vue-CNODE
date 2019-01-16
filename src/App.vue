@@ -2,6 +2,8 @@
   <div id="app">
   <Header></Header>
    <div class="main">
+     <router-view name="slidebar"></router-view>
+     <!--slidebar作为侧边栏组件,如果进入文章页则显示,其他页则不显示-->
      <router-view name="main">
        <!--接收routes中的路由对象-->
        <!--通过main指定的路由对象的改变使用不同的组件  main对应所显示组件-->
