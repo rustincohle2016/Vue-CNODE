@@ -17,7 +17,7 @@
 
 <script>
   import Header from './components/Header'
-  import Postlist from './components/Postlist'
+  import Postlist from './components/Postlist'//todo
 export default {
   name: 'App',
   components:{
