@@ -60,12 +60,16 @@
               {{post.last_reply_at | formatDate }}
             </span>
           </li>
+          <li>
+            <pagination></pagination>
+          </li>
         </ul>
       </div>
     </div>
 </template>
 
 <script>
+  import pagination from './Pagination'
     export default {
         name: "Postlist",
         data(){
@@ -75,6 +79,10 @@
             // post用于接收axios收到的数据,定义在data内
           }
         },
+      components:{
+          pagination,
+      },
+      //引用pagination组件
       methods:{
           getData(){
             this.$http.get('https://cnodejs.org/api/v1/topics',{
