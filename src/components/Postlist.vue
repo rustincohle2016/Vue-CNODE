@@ -44,6 +44,7 @@
             name:'post_content',
             params: {
             id: post.id
+            // 此处将文章的ID传递给路由,由article组件接收
             }
             }">
               <!--点击标题,将帖子的ID传输给article组件.-->
