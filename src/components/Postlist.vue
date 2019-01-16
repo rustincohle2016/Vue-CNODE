@@ -43,8 +43,10 @@
             <router-link :to="{
             name:'post_content',
             params: {
-            id: post.id
+            id: post.id,
             // 此处将文章的ID传递给路由,由article组件接收
+            name:post.author.loginname
+            // 此处将文章的loginname传递给路由,由sidebar组件接收
             }
             }">
               <!--点击标题,将帖子的ID传输给article组件.-->
