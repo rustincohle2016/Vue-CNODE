@@ -87,7 +87,7 @@
           getData(){
             this.$http.get('https://cnodejs.org/api/v1/topics',{
               params:{
-                page:1,
+                page:this.postpage,
                 limit:20
               }
             })

@@ -7,7 +7,7 @@
      <router-view name="main">
        <!--接收routes中的路由对象-->
        <!--通过main指定的路由对象的改变使用不同的组件  main对应所显示组件-->
-       <Postlist></Postlist>
+       <Postlist ></Postlist>
      </router-view>
    </div>
 
